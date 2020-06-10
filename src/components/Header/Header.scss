@@ -1,0 +1,32 @@
+.header-body{
+    padding: 45px 0 45px 0;
+    display: flex;
+    position: sticky;
+    top: 0;
+
+    background: {
+            color: #e60012;
+        }
+    .header-title {
+        color: white;
+        font: {
+            family: 'Merriweather Sans', sans-serif;
+            size: 40px;
+        }
+        transform: translate(-50%, 0);
+    }
+
+    .backbutton{
+        height: 100%;
+        width: 50vw;
+        display: flex;
+        transform: translate(40px, 0);
+    }
+}
+
+.backbuttonNone{
+    justify-content: space-around;
+    .header-title{
+        transform: translate(0, 0);
+    }
+}

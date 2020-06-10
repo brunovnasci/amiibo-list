@@ -1,0 +1,60 @@
+.amiibo-preview-content{
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px 0 20px 0;
+    display: flex;
+
+    img{
+        height: 300px;
+        padding: 5px 30px 5px 30px;
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+
+        font: {
+            family: 'Merriweather Sans', sans-serif;
+            size: 34px;
+        }
+        
+        h1 {
+            font-weight: bold;
+            margin: 35px 0 50px 0;
+        }
+
+        p {
+            margin: 5px 0 5px 0;
+        }
+    }
+}
+
+.amiibo-preview-body {
+    background-color: white;
+    margin: 0 15px 15px 15px;
+
+    border: {
+        bottom: solid;
+        top: solid;
+        left: solid;
+        right: solid;
+        color: #fff;
+        width: 2px;
+        radius: 15px
+    }
+
+    span {
+        color: #999999;
+        display: flex;
+        justify-content: flex-end;
+        margin: {
+            top: 15px;
+            right: 15px;
+        }
+
+        font: {
+            family: 'Merriweather Sans', sans-serif;
+            size: 25px;
+        }
+    }
+}
