@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import Header from '../../../components/Header/Header';
+import Loading from '../../../components/Loading/Loading';
 
 import RESOURCES from '../../../components/utils/Resourses';
 import history from '../../../services/history';
@@ -13,14 +14,18 @@ function AmiiboDetais(props){
     const { id } = props.match.params;
 
     const [ amiibo, setAmiibo ] = useState({});
+    const [ isLoading, setIsLoading ] = useState(false);
 
     const getAmiibo = async () => {
+        setIsLoading(true);
         try {
             const response = await api.get(`amiibo/?id=${id}`);
             setAmiibo(response.data.amiibo);
         }catch(error){
             console.log(error)
         }
+
+        setIsLoading(false);
     }
 
     useEffect(() =>{
@@ -36,6 +41,7 @@ function AmiiboDetais(props){
     return(
         <>
             <Header backButtonExists onClick={goBack}  headerTitle={RESOURCES.AMIIBO_DETAIS.HEADER} />
+            {isLoading ? <Loading /> :
             <div className="amiibo-body">
                 <div className="amiibo-image">
                     <img src={image} ></img>
@@ -58,7 +64,7 @@ function AmiiboDetais(props){
                         </ul>
                     </div> : ''}
                 </div>
-            </div>
+            </div>}
         </>
     );
 }
