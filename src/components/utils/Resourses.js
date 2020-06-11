@@ -1,11 +1,14 @@
 const RESOURCES = {
     HOME: {
         HEADER: "Amiibo list",
-        CARD_ONE: "Ver todos os amiibos",
-        CARD_TWO: "Pesquisar amiibos (EM BREVE)"
+        CARD_ONE: "Ver todos os Amiibos",
+        CARD_TWO: "Pesquisar Amiibos (EM BREVE)"
     },
     AMIIBO: {
-        HEADER: "Todos os amiibos"
+        HEADER: "Todos os Amiibos"
+    },
+    AMIIBO_DETAIS: {
+        HEADER: "Detalhes do Amiibo"
     }
 }
 

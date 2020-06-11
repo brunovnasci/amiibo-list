@@ -3,6 +3,7 @@ import { Router, Switch, Route } from 'react-router-dom';
 
 import Home from './pages/Home/Home';
 import Amiibos from './pages/Amiibos/Amiibos';
+import AmiiboDetails from './pages/Amiibos/AmiiboDetails/AmiiboDetails';
 
 import history from './services/history';
 import ROUTES from './routes/Routes';
@@ -16,6 +17,7 @@ function App() {
         <Switch>
           <Route exact path={ROUTES.HOME} component={Home} />
           <Route exact path={ROUTES.ALL_AMIIBOS} component={Amiibos} />
+          <Route exact path={ROUTES.AMIIBO_DETAILS} component={AmiiboDetails} />
         </Switch>
       </Router>
     </div>

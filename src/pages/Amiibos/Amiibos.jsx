@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import Header from '../../components/Header/Header';
-import AmiiboPreview from './AmiiboPreview/AmiiboPreview';
+import AmiiboPreview from '../../components/AmiiboPreview/AmiiboPreview';
 
 import api from '../../services/amiibosApi';
 import HOSTS from '../../hosts';
@@ -25,13 +25,17 @@ function Amiibos(){
         }
     }
 
+    const goBack = () =>{ 
+        history.goBack() 
+    }
+
     useEffect(() =>{
         getAmiibos();
     }, []);
 
     return(
         <div>
-            <Header backButtonExists headerTitle={RESOURSES.AMIIBO.HEADER} onClick={ ()=> history.goBack() } />
+            <Header backButtonExists headerTitle={RESOURSES.AMIIBO.HEADER} onClick={ goBack } />
             <div className="amiibos-content">
                 {amiibos.map((item, index) => {
                     return(<AmiiboPreview amiibo={item} key={index} />);

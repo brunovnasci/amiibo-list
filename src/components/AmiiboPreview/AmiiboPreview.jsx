@@ -1,7 +1,7 @@
 import React from 'react';
 
-import history from '../../../services/history';
-import { translateAmiiboType } from '../../../components/utils/Utils';
+import history from '../../services/history';
+import { translateAmiiboType } from '../utils/Utils';
 
 import './AmiiboPreview.scss';
 
@@ -20,8 +20,12 @@ function AmiiboPreview({ amiibo }) {
 
     const id = `${head}${tail}`;
 
+    const goToAmiiboDetails = () => {
+        history.push(`/amiibo/${id}`);
+    }
+
     return(
-        <div className="amiibo-preview-body">
+        <div className="amiibo-preview-body" onClick={() => goToAmiiboDetails()}>
             <span>{translateAmiiboType(type)}</span>
             <div className="amiibo-preview-content" >
                 <img src={image} alt={`${character} from ${gameSeries}`} />
