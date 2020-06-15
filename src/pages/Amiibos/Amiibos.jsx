@@ -22,7 +22,6 @@ function Amiibos(){
     const { data, isLoading, page, lastPage } = amiibos;
 
     const [ amiiboList, setAmiiboList ] = useState([]);
-    const [ refresh, setRefresh ] = useState([]);
 
     const getAmiibos = async () => {
         dispatch({ type: 'LOADING_AMIIBOS' });
@@ -39,7 +38,8 @@ function Amiibos(){
     }
 
     const refreshPage = () => {
-        setRefresh(!refresh);
+        dispatch({ type: 'CLEAR_AMIIBOS' });
+        getAmiibos();
     }
 
     useEffect(() =>{
@@ -53,11 +53,6 @@ function Amiibos(){
         var pageContent = data[page] ? data[page] : [];
         setAmiiboList(pageContent);
     }, [data, page]);
-
-    useEffect(() => {
-        dispatch({ type: 'CLEAR_AMIIBOS' });
-        // eslint-disable-next-line
-    }, [refresh]);
 
     return(
         <>
