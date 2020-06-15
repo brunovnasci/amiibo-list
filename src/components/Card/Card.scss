@@ -4,24 +4,31 @@
     background-color: #ffffff;
     border: {
         bottom: solid;
-        color: #e60012;
-        width: 10px;
-    }
-
-    img {
-        width: 100%;
+        top: solid;
+        left: solid;
+        right: solid;
+        color: white;
+        width: 2px;
+        radius: 5px;
     }
 
     h1 {
         margin: 7px 7px 7px 15px;
         font: {
-            size: 50px;
-            family: "Francois One", sans-serif;
+            size: 34px;
+            family: 'Merriweather Sans', sans-serif;
         }
     }
 
     div {
-        background-color: pink;
-        height: 300px;
+        display: flex;
+        justify-content: center;
+        height: 325px;
+        margin: 20px 0 20px 0;
+        background-color: white;
+
+        img {
+            height: 100%;
+        }
     }
 }

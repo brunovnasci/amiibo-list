@@ -1,10 +1,12 @@
 import React from "react";
 import "./Card.scss";
 
-function Card({ text, onClick }) {
+function Card({ text, onClick, image }) {
   return (
     <div className="card-body" onClick={() => onClick()}>
-      <div></div>
+      <div>
+        <img src={image} />
+      </div>
       <h1>{text}</h1>
     </div>
   );

@@ -3,3 +3,71 @@
     margin: 10px 0 10px 0;
     grid-template-columns: auto;
 }
+
+.nintendo-rights {
+    background-color: white;
+    margin: 0 15px 15px 15px;
+    border: {
+        bottom: solid;
+        top: solid;
+        left: solid;
+        right: solid;
+        color: white;
+        width: 2px;
+        radius: 5px;
+    }
+
+    h1 {
+        margin: 7px 7px 7px 15px;
+
+        font: {
+            size: 30px;
+            family: 'Merriweather Sans', sans-serif;
+            weight: bold;
+        }
+    }
+
+    p {
+        margin: 7px 25px 7px 25px;
+        width: fit-content;
+        height: fit-content;
+
+        font: {
+            size: 25px;
+            family: 'Merriweather Sans', sans-serif;
+        }
+    }
+    div{
+        display: flex;
+
+        .redirect-button {
+            display: flex;
+            justify-content: center;
+            margin: 10px;
+            padding: 15px;
+            width: 100%;
+            background-color: #e60012;
+            color: white;
+    
+            border: {
+                bottom: solid;
+                top: solid;
+                left: solid;
+                right: solid;
+                color: #e60012;
+                width: 2px;
+                radius: 5px;
+            }
+
+            .icon {
+                align-self: flex-start;
+            }
+        }
+
+        :active {
+            background-color: white;
+            color: #e60012;
+            border: none;
+        } 
+    }
+}
