@@ -1,0 +1,53 @@
+@mixin button-structure {
+    width: fit-content;
+    margin: 0 2px;
+
+    border: {
+        width: 5px;
+        radius: 10px;
+    }
+
+    h1{
+        padding: 25px 45px;
+
+        font: {
+            family: 'Open Sans', sans-serif;
+            size: 30px;
+        }
+    }
+}
+
+.button-body{
+    @include button-structure();
+
+    color: white;
+    background-color: #e60012;
+
+    :active {
+        background-color: white;
+        color: #e60012;
+        border: none;
+    }    
+}
+.active {
+    @include button-structure();
+
+    background-color: white;
+    color: #e60012;
+
+    border: {
+        bottom: solid;
+        top: solid;
+        left: solid;
+        right: solid;
+        color: #e60012;
+    }
+
+    h1{
+        padding: 30px 50px;
+    }
+}
+
+.disable { 
+    background: none;
+}

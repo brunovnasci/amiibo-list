@@ -5,15 +5,17 @@
     top: 0;
 
     background: {
-            color: #e60012;
-        }
+        color: #e60012;
+    }
+
     .header-title {
         color: white;
+        transform: translate(-50%, 0);
+
         font: {
             family: 'Merriweather Sans', sans-serif;
             size: 40px;
         }
-        transform: translate(-50%, 0);
     }
 
     .backbutton{
@@ -24,8 +26,29 @@
     }
 }
 
+.with-refresh{
+    justify-content: space-between;
+
+    .header-title {
+        transform: translate(0, 0);
+    }
+
+    .backbutton {
+        width: auto;
+        transform: translate(0, 0);
+        margin-left: 40px;
+    }
+
+    .refreshbutton {
+        width: auto;
+        transform: translate(0, 0);
+        margin-right: 40px;
+    }
+}
+
 .backbuttonNone{
     justify-content: space-around;
+
     .header-title{
         transform: translate(0, 0);
     }

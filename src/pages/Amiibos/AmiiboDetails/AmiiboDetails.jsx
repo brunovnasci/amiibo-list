@@ -30,6 +30,7 @@ function AmiiboDetais(props){
 
     useEffect(() =>{
         getAmiibo()
+        // eslint-disable-next-line
     },[id]);
 
     const goBack = () => {
@@ -40,11 +41,11 @@ function AmiiboDetais(props){
 
     return(
         <>
-            <Header backButtonExists onClick={goBack}  headerTitle={RESOURCES.AMIIBO_DETAIS.HEADER} />
+            <Header backButtonExists backOnClick={goBack}  headerTitle={RESOURCES.AMIIBO_DETAIS.HEADER} />
             {isLoading ? <Loading /> :
             <div className="amiibo-body">
                 <div className="amiibo-image">
-                    <img src={image} ></img>
+                    <img src={image} alt={`${character} from ${gameSeries}`} ></img>
                 </div>
                 <div className="amiibo-content">
                     <h1>{name}</h1>

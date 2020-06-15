@@ -6,7 +6,7 @@ function Loading() {
 
     return(
         <div className="loading-body">
-            <div class="lds-ring">
+            <div className="lds-ring">
                 <div></div>
                 <div></div>
                 <div></div>

@@ -1,3 +1,18 @@
 .amiibos-content {
-    margin: 20px 0 20px 0;
+    margin: 20px 0 0 0;
+
+    .page-info {
+        display: flex;
+        justify-content: flex-end;
+        margin: 0 15px 15px 0;
+
+        span {
+            color: #999999;
+
+            font: {
+                family: 'Open Sans', sans-serif;
+                size: 30px;
+            }
+        }
+    }
 }
