@@ -18,8 +18,7 @@ function Home() {
   }  
 
   const toFindAmiibos = () => {
-    // history.push(ROUTES.FIND_AMIIBOS);
-    alert("CALMA AI!!! AINDA ESTOU FAZENDO")
+    history.push(ROUTES.FIND_AMIIBOS);
   }
 
   const toNintendoSite = () => {

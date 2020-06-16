@@ -40,3 +40,18 @@ export function partArray(array) {
 
   return exit;
 }
+
+export function matchSearch(apiArray, search) {
+  const aux = [];
+  search = search.toLowerCase();
+  for (let i = 0; i < apiArray.length; i++) {
+    for (let j = 0; j < search.length; j++) {
+      const characterName = apiArray[i].character.toLowerCase();
+      if (search === characterName.slice(0, j + 1)) {
+        aux.push(apiArray[i]);
+      }
+    }
+  }
+
+  return aux;
+};
