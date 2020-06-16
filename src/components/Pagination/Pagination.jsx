@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import Button from '../Button/Button';
 
+import RESOURSES from '../utils/Resourses';
+
 import './Pagination.scss';
 
 function Pagination({ prev, actual, next,  }) {
@@ -48,7 +50,7 @@ function Pagination({ prev, actual, next,  }) {
 
     return(
         <div className="pagination-body">
-            <Button text="Anterior" disable={prevPageExists} onClick={prevPageExists ? () => goToPrevPage() : () => ''}/> 
+            <Button text={RESOURSES.AMIIBO.PAGINATION.PREV_PAGE} disable={prevPageExists} onClick={prevPageExists ? () => goToPrevPage() : () => ''}/> 
             <div className="pages-button">
                 { (page + 1) === 1 ?
                     <>
@@ -69,7 +71,7 @@ function Pagination({ prev, actual, next,  }) {
                         <Button text={nextPage} disable={true} active={false} pageSelector />
                     </>}
             </div>
-            <Button text="Próximo" disable={nextPageExists} onClick={nextPageExists ? () => goToNextPage() : () => ''}/> 
+            <Button text={RESOURSES.AMIIBO.PAGINATION.NEXT_PAGE} disable={nextPageExists} onClick={nextPageExists ? () => goToNextPage() : () => ''}/> 
         </div>
     );
 }
