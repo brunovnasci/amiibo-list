@@ -15,6 +15,8 @@ import './FindAmiibos.scss';
 
 function FindAmiibos(){
 
+    const [ haveSearched, setHaveSearched ] = useState(false);
+
     const dispatch = useDispatch();
     const state = useSelector(state => state);
 
@@ -36,6 +38,7 @@ function FindAmiibos(){
         if(amiibos.data.length === 0){
             getAmiibos();
         }
+        // eslint-disable-next-line
     }, []);
 
     const goBack = () => {
@@ -48,7 +51,13 @@ function FindAmiibos(){
 
     const onSubmit = (e) => {
         e.preventDefault();
-        dispatch({ type: 'SET_SEARCH_AMIIBOS' , payload: matchSearch(amiibos.data, searchText) });
+        const search = matchSearch(amiibos.data, searchText);
+        if(search.length === 0){
+            setHaveSearched(true);
+        }else{
+            setHaveSearched(false);
+        }
+        dispatch({ type: 'SET_SEARCH_AMIIBOS' , payload: search });
     }
 
     return(
@@ -67,7 +76,10 @@ function FindAmiibos(){
                     </div>
                     <div className="amiibo-content">
                         <div className="total-elements">
-                            {searchAmiibo.data.length != 0 ? <span>{`${searchAmiibo.data.length} resultados`}</span> : '' }
+                            {searchAmiibo.data.length !== 0 ? <span>{`${searchAmiibo.data.length} resultados`}</span> : '' }
+                        </div>
+                        <div className="no-results">
+                            { haveSearched ? <span>Nenhum resultado foi encontrado</span> : '' }
                         </div>
                         {searchAmiibo.data.map((item, index) => {
                             return(<AmiiboPreview key={index} amiibo={item} />);

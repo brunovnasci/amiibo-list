@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 
@@ -12,6 +13,14 @@ import RESOURSES from '../../components/utils/Resourses'
 import "./Home.scss";
 
 function Home() {
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch({ type: 'CLEAR_AMIIBOS' });
+    dispatch({ type: 'CLEAR_SEARCH' });
+    // eslint-disable-next-line
+  }, []);
 
   const toAllAmiibos = () => {
     history.push(ROUTES.ALL_AMIIBOS);

@@ -8,7 +8,7 @@ export default (state = INITIAL_STATE, action) => {
         case('SET_SEARCH_AMIIBOS'):
             return({ ...state, data: action.payload });
         case('CLEAR_SEARCH'):
-            return({ ...state, data: [] });
+            return({ ...state, data: [], searchText: '' });
         case('SEARCH_TEXT_CHANGED'): 
             return({ ...state, searchText: action.payload });
         default:

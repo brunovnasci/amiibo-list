@@ -16,7 +16,7 @@ export default (state = INITIAL_STATE, action) => {
         case 'PREV_PAGE':
             return({ ...state, page: state.page - 1 });
         case 'CLEAR_AMIIBOS': 
-            return({ ...state, data: [], isLoading: true, lastPage: 0 });
+            return({ ...state, data: [], isLoading: true, lastPage: 0, page: 0 });
         case 'SET_AMIIBO_PAGE': 
             return({ ...state, page: action.payload });
         default:

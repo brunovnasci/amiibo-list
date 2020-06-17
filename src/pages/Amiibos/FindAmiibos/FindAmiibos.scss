@@ -96,20 +96,24 @@
 }
 
 .amiibo-content {
+    span {
+        color: #999999;
+        margin: 0 15px 0 0;
+    
+        font: {
+            family: 'Open Sans', sans-serif;
+            size: 30px;
+        }
+    }
 
     .total-elements {
         display: flex;
         justify-content: flex-end;
 
-        span {
-            color: #999999;
-            margin: 0 15px 15px 0;
-    
-            font: {
-                family: 'Open Sans', sans-serif;
-                size: 30px;
-            }
-        }
+    }
+
+    .no-results {
+        margin: 0 0 15px 20px;
     }
 
 }
